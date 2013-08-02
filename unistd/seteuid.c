@@ -63,7 +63,9 @@
 
 #include <unistd.h>
 
-int getpagesize( void )
+int seteuid( uid_t uid )
 {
+    ( void )uid;
+    
     return 0;
 }

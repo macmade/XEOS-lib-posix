@@ -63,9 +63,13 @@
 
 #include <unistd.h>
 
-int chroot( const char * path )
+int fchownat( int fd, const char * path, uid_t owner, gid_t group, int flag )
 {
+    ( void )fd;
     ( void )path;
+    ( void )owner;
+    ( void )group;
+    ( void )flag;
     
     return 0;
 }

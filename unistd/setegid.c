@@ -63,9 +63,9 @@
 
 #include <unistd.h>
 
-void * sbrk( intptr_t delta )
+int setegid( gid_t gid )
 {
-    ( void )delta;
+    ( void )gid;
     
-    return NULL;
+    return 0;
 }

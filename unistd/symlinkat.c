@@ -63,9 +63,11 @@
 
 #include <unistd.h>
 
-int usleep( useconds_t useconds )
+int symlinkat( const char * path1, int fd, const char * path2 )
 {
-    ( void )useconds;
+    ( void )path1;
+    ( void )fd;
+    ( void )path2;
     
     return 0;
 }

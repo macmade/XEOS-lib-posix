@@ -63,9 +63,12 @@
 
 #include <unistd.h>
 
-char * getwd( char * buf )
+int faccessat( int fd, const char * path, int amode, int flag )
 {
-    ( void )buf;
+    ( void )fd;
+    ( void )path;
+    ( void )amode;
+    ( void )flag;
     
-    return NULL;
+    return 0;
 }

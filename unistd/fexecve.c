@@ -63,9 +63,11 @@
 
 #include <unistd.h>
 
-char * getpass( const char * prompt )
+int fexecve( int fd, char * const argv[], char * const envp[] )
 {
-    ( void )prompt;
+    ( void )fd;
+    ( void )argv;
+    ( void )envp;
     
-    return NULL;
+    return 0;
 }
