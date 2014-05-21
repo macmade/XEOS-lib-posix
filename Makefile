@@ -65,109 +65,54 @@ include ../../../Makefile-Config.mk
 # Display
 #-------------------------------------------------------------------------------
 
-PROMPT              := "    ["$(COLOR_GREEN)" XEOS "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" SRC  "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" LIB  "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" POSX "$(COLOR_NONE)"]> *** "
-
-#-------------------------------------------------------------------------------
-# Paths
-#-------------------------------------------------------------------------------
-
-DIR_SRC_SYS_MMAN    = $(PATH_SRC_LIB_POSIX)sys_mman/
-DIR_SRC_UNISTD      = $(PATH_SRC_LIB_POSIX)unistd/
-DIR_SRC_SCHED       = $(PATH_SRC_LIB_POSIX)sched/
-DIR_SRC_TIME        = $(PATH_SRC_LIB_POSIX)time/
-DIR_SRC_SIGNAL      = $(PATH_SRC_LIB_POSIX)signal/
-DIR_SRC_AIO         = $(PATH_SRC_LIB_POSIX)aio/
-DIR_SRC_NETINET_IN  = $(PATH_SRC_LIB_POSIX)netinet_in/
-DIR_SRC_ARPA_INET   = $(PATH_SRC_LIB_POSIX)arpa_inet/
-DIR_SRC_CTYPE       = $(PATH_SRC_LIB_POSIX)ctype/
-
-#-------------------------------------------------------------------------------
-# Search paths
-#-------------------------------------------------------------------------------
-
-# Define the search paths for source files
-vpath %$(EXT_C)         $(PATH_SRC_LIB_POSIX)
-vpath %$(EXT_C)         $(DIR_SRC_SYS_MMAN)
-vpath %$(EXT_C)         $(DIR_SRC_UNISTD)
-vpath %$(EXT_C)         $(DIR_SRC_SCHED)
-vpath %$(EXT_C)         $(DIR_SRC_TIME)
-vpath %$(EXT_C)         $(DIR_SRC_SIGNAL)
-vpath %$(EXT_C)         $(DIR_SRC_AIO)
-vpath %$(EXT_C)         $(DIR_SRC_NETINET_IN)
-vpath %$(EXT_C)         $(DIR_SRC_ARPA_INET)
-vpath %$(EXT_C)         $(DIR_SRC_CTYPE)
-
-#-------------------------------------------------------------------------------
-# File suffixes
-#-------------------------------------------------------------------------------
-
-# Adds the suffixes used in this file
-.SUFFIXES:  $(EXT_ASM_32)   \
-            $(EXT_ASM_64)   \
-            $(EXT_C)        \
-            $(EXT_H)        \
-            $(EXT_OBJ)      \
-            $(EXT_BIN)
+PROMPT  := "    ["$(COLOR_GREEN)" XEOS "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" SRC  "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" LIB  "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" POSX "$(COLOR_NONE)"]> *** "
 
 #-------------------------------------------------------------------------------
 # Files
 #-------------------------------------------------------------------------------
 
-_FILES_C_OBJ_BUILD              = $(call XEOS_FUNC_C_OBJ,$(PATH_BUILD_32_LIB_OBJ_POSIX),$(PATH_SRC_LIB_POSIX))
-_FILES_C_OBJ_BUILD_SYS_MMAN     = $(call XEOS_FUNC_C_OBJ,$(PATH_BUILD_32_LIB_OBJ_POSIX),$(DIR_SRC_SYS_MMAN))
-_FILES_C_OBJ_BUILD_UNISTD       = $(call XEOS_FUNC_C_OBJ,$(PATH_BUILD_32_LIB_OBJ_POSIX),$(DIR_SRC_UNISTD))
-_FILES_C_OBJ_BUILD_SCHED        = $(call XEOS_FUNC_C_OBJ,$(PATH_BUILD_32_LIB_OBJ_POSIX),$(DIR_SRC_SCHED))
-_FILES_C_OBJ_BUILD_TIME         = $(call XEOS_FUNC_C_OBJ,$(PATH_BUILD_32_LIB_OBJ_POSIX),$(DIR_SRC_TIME))
-_FILES_C_OBJ_BUILD_SIGNAL       = $(call XEOS_FUNC_C_OBJ,$(PATH_BUILD_32_LIB_OBJ_POSIX),$(DIR_SRC_SIGNAL))
-_FILES_C_OBJ_BUILD_AIO          = $(call XEOS_FUNC_C_OBJ,$(PATH_BUILD_32_LIB_OBJ_POSIX),$(DIR_SRC_AIO))
-_FILES_C_OBJ_BUILD_NETINET_IN   = $(call XEOS_FUNC_C_OBJ,$(PATH_BUILD_32_LIB_OBJ_POSIX),$(DIR_SRC_NETINET_IN))
-_FILES_C_OBJ_BUILD_ARPA_INET    = $(call XEOS_FUNC_C_OBJ,$(PATH_BUILD_32_LIB_OBJ_POSIX),$(DIR_SRC_ARPA_INET))
-_FILES_C_OBJ_BUILD_CTYPE        = $(call XEOS_FUNC_C_OBJ,$(PATH_BUILD_32_LIB_OBJ_POSIX),$(DIR_SRC_CTYPE))
+_FILES  = $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_POSIX))
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_POSIX)aio/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_POSIX)arpa_inet/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_POSIX)ctype/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_POSIX)netinet_in/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_POSIX)sched/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_POSIX)signal/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_POSIX)sys_mman/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_POSIX)time/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_POSIX)unistd/)
 
 #-------------------------------------------------------------------------------
 # Built-in targets
 #-------------------------------------------------------------------------------
 
 # Declaration for phony targets, to avoid problems with local files
-.PHONY: all     \
-        clean
+.PHONY: all clean
 
 #-------------------------------------------------------------------------------
 # Phony targets
 #-------------------------------------------------------------------------------
 
 # Build the full project
-all:    $(_FILES_C_OBJ_BUILD)               \
-        $(_FILES_C_OBJ_BUILD_SYS_MMAN)      \
-        $(_FILES_C_OBJ_BUILD_SYSCALL)       \
-        $(_FILES_C_OBJ_BUILD_UNISTD)        \
-        $(_FILES_C_OBJ_BUILD_SCHED)         \
-        $(_FILES_C_OBJ_BUILD_TIME)          \
-        $(_FILES_C_OBJ_BUILD_SIGNAL)        \
-        $(_FILES_C_OBJ_BUILD_AIO)           \
-        $(_FILES_C_OBJ_BUILD_NETINET_IN)    \
-        $(_FILES_C_OBJ_BUILD_ARPA_INET)     \
-        $(_FILES_C_OBJ_BUILD_CTYPE)
+all: $(_FILES)
 	
 	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the library archive"$(COLOR_NONE)" [ 32 bits ]: "$(COLOR_GRAY)"libposix.a"$(COLOR_NONE)
-	@$(AR_32) $(ARGS_AR_32) $(PATH_BUILD_32_LIB_BIN)libposix.a $(PATH_BUILD_32_LIB_OBJ_POSIX)*$(EXT_OBJ)
-	@$(RANLIB_32) $(PATH_BUILD_32_LIB_BIN)libposix.a
+	@$(call XEOS_FUNC_LIB_STATIC_32,libposix,$^)
 	
 	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the library archive"$(COLOR_NONE)" [ 64 bits ]: "$(COLOR_GRAY)"libposix.a"$(COLOR_NONE)
-	@$(AR_64) $(ARGS_AR_64) $(PATH_BUILD_64_LIB_BIN)libposix.a $(PATH_BUILD_64_LIB_OBJ_POSIX)*$(EXT_OBJ)
-	@$(RANLIB_64) $(PATH_BUILD_64_LIB_BIN)libposix.a
+	@$(call XEOS_FUNC_LIB_STATIC_64,libposix,$^)
 	
 	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the dynamic library"$(COLOR_NONE)" [ 32 bits ]: "$(COLOR_GRAY)"libposix.so"$(COLOR_NONE)
-	@$(LD_32) $(ARGS_LD_SHARED_32) -o $(PATH_BUILD_32_LIB_BIN)libposix.so $(PATH_BUILD_32_LIB_OBJ_POSIX)*$(EXT_OBJ_PIC)
+	@$(call XEOS_FUNC_LIB_DYNAMIC_32,libposix,$^)
 	
 	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the dynamic library"$(COLOR_NONE)" [ 64 bits ]: "$(COLOR_GRAY)"libposix.so"$(COLOR_NONE)
-	@$(LD_64) $(ARGS_LD_SHARED_64) -o $(PATH_BUILD_64_LIB_BIN)libposix.so $(PATH_BUILD_64_LIB_OBJ_POSIX)*$(EXT_OBJ_PIC)
+	@$(call XEOS_FUNC_LIB_DYNAMIC_64,libposix,$^)
 
 # Cleans the build files
 clean:
 	
 	@$(PRINT) $(PROMPT)"Cleaning all build files"
-	@$(RM) $(ARGS_RM) $(PATH_BUILD_32_LIB_OBJ_POSIX)*
-	@$(RM) $(ARGS_RM) $(PATH_BUILD_64_LIB_OBJ_POSIX)*
-	@$(RM) $(ARGS_RM) $(PATH_BUILD_32_LIB_BIN)libposix.*
-	@$(RM) $(ARGS_RM) $(PATH_BUILD_64_LIB_BIN)libposix.*
+	@$(RM) $(ARGS_RM) $(PATH_BUILD_32_OBJ)$(subst $(PATH_SRC),,$(PATH_SRC_LIB_POSIX))
+	@$(RM) $(ARGS_RM) $(PATH_BUILD_64_OBJ)$(subst $(PATH_SRC),,$(PATH_SRC_LIB_POSIX))
+	@$(RM) $(ARGS_RM) $(PATH_BUILD_32_BIN)libposix.*
+	@$(RM) $(ARGS_RM) $(PATH_BUILD_64_BIN)libposix.*
