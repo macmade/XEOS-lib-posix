@@ -96,16 +96,16 @@ _FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_POSIX)unistd/)
 # Build the full project
 all: $(_FILES)
 	
-	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the library archive"$(COLOR_NONE)" [ 32 bits ]: "$(COLOR_GRAY)"libposix.a"$(COLOR_NONE)
+	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the library archive"$(COLOR_NONE)" [ 32 bits ]: "$(COLOR_GRAY)"libposix$(EXT_LIB_STATIC)"$(COLOR_NONE)
 	@$(call XEOS_FUNC_LIB_STATIC_32,libposix,$^)
 	
-	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the library archive"$(COLOR_NONE)" [ 64 bits ]: "$(COLOR_GRAY)"libposix.a"$(COLOR_NONE)
+	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the library archive"$(COLOR_NONE)" [ 64 bits ]: "$(COLOR_GRAY)"libposix$(EXT_LIB_STATIC)"$(COLOR_NONE)
 	@$(call XEOS_FUNC_LIB_STATIC_64,libposix,$^)
 	
-	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the dynamic library"$(COLOR_NONE)" [ 32 bits ]: "$(COLOR_GRAY)"libposix.so"$(COLOR_NONE)
+	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the dynamic library"$(COLOR_NONE)" [ 32 bits ]: "$(COLOR_GRAY)"libposix$(EXT_LIB_DYNAMIC)"$(COLOR_NONE)
 	@$(call XEOS_FUNC_LIB_DYNAMIC_32,libposix,$^)
 	
-	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the dynamic library"$(COLOR_NONE)" [ 64 bits ]: "$(COLOR_GRAY)"libposix.so"$(COLOR_NONE)
+	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the dynamic library"$(COLOR_NONE)" [ 64 bits ]: "$(COLOR_GRAY)"libposix$(EXT_LIB_DYNAMIC)"$(COLOR_NONE)
 	@$(call XEOS_FUNC_LIB_DYNAMIC_64,libposix,$^)
 
 # Cleans the build files
