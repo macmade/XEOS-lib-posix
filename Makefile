@@ -59,60 +59,25 @@
 
 # $Id$
 
-include ../../../Makefile-Config.mk
+include make/Config.mk
+include make/Targets.mk
 
-#-------------------------------------------------------------------------------
-# Display
-#-------------------------------------------------------------------------------
+PROMPT  := XEOS SOURCE LIB POSIX
+DEPS    := XEOS-lib-c99 XEOS-lib-system
+FILES   := $(call XEOS_FUNC_C_FILES,$(DIR_SRC)aio/)         \
+           $(call XEOS_FUNC_C_FILES,$(DIR_SRC)arpa_inet/)   \
+           $(call XEOS_FUNC_C_FILES,$(DIR_SRC)ctype/)       \
+           $(call XEOS_FUNC_C_FILES,$(DIR_SRC)netiniet_in/) \
+           $(call XEOS_FUNC_C_FILES,$(DIR_SRC)sched/)       \
+           $(call XEOS_FUNC_C_FILES,$(DIR_SRC)signal/)      \
+           $(call XEOS_FUNC_C_FILES,$(DIR_SRC)sys_mman/)    \
+           $(call XEOS_FUNC_C_FILES,$(DIR_SRC)time/)        \
+           $(call XEOS_FUNC_C_FILES,$(DIR_SRC)unistd/)      \
 
-PROMPT  := "    ["$(COLOR_GREEN)" XEOS "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" SRC  "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" LIB  "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" POSX "$(COLOR_NONE)"]> *** "
-
-#-------------------------------------------------------------------------------
-# Files
-#-------------------------------------------------------------------------------
-
-_FILES  = $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_POSIX))
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_POSIX)aio/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_POSIX)arpa_inet/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_POSIX)ctype/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_POSIX)netinet_in/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_POSIX)sched/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_POSIX)signal/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_POSIX)sys_mman/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_POSIX)time/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_POSIX)unistd/)
-
-#-------------------------------------------------------------------------------
-# Built-in targets
-#-------------------------------------------------------------------------------
-
-# Declaration for phony targets, to avoid problems with local files
-.PHONY: all clean
-
-#-------------------------------------------------------------------------------
-# Phony targets
-#-------------------------------------------------------------------------------
-
-# Build the full project
-all: $(_FILES)
+all: obj-build
 	
-	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the library archive"$(COLOR_NONE)" [ 32 bits ]: "$(COLOR_GRAY)"libposix$(EXT_LIB_STATIC)"$(COLOR_NONE)
-	@$(call XEOS_FUNC_LIB_STATIC_32,libposix,$^)
+	@:
 	
-	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the library archive"$(COLOR_NONE)" [ 64 bits ]: "$(COLOR_GRAY)"libposix$(EXT_LIB_STATIC)"$(COLOR_NONE)
-	@$(call XEOS_FUNC_LIB_STATIC_64,libposix,$^)
+clean: obj-clean
 	
-	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the dynamic library"$(COLOR_NONE)" [ 32 bits ]: "$(COLOR_GRAY)"libposix$(EXT_LIB_DYNAMIC)"$(COLOR_NONE)
-	@$(call XEOS_FUNC_LIB_DYNAMIC_32,libposix,$^)
-	
-	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the dynamic library"$(COLOR_NONE)" [ 64 bits ]: "$(COLOR_GRAY)"libposix$(EXT_LIB_DYNAMIC)"$(COLOR_NONE)
-	@$(call XEOS_FUNC_LIB_DYNAMIC_64,libposix,$^)
-
-# Cleans the build files
-clean:
-	
-	@$(PRINT) $(PROMPT)"Cleaning all build files"
-	@$(RM) $(ARGS_RM) $(PATH_BUILD_32_OBJ)$(subst $(PATH_SRC),,$(PATH_SRC_LIB_POSIX))
-	@$(RM) $(ARGS_RM) $(PATH_BUILD_64_OBJ)$(subst $(PATH_SRC),,$(PATH_SRC_LIB_POSIX))
-	@$(RM) $(ARGS_RM) $(PATH_BUILD_32_BIN)libposix.*
-	@$(RM) $(ARGS_RM) $(PATH_BUILD_64_BIN)libposix.*
+	@:
