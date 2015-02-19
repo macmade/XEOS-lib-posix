@@ -61,8 +61,8 @@
 
 /* $Id$ */
 
-#ifndef __XEOS_LIB_POSIX_CTYPE_H__
-#define __XEOS_LIB_POSIX_CTYPE_H__
+#ifndef XEOS_LIB_POSIX_CTYPE_H
+#define XEOS_LIB_POSIX_CTYPE_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -100,4 +100,4 @@ int toascii( int c );
 }
 #endif
 
-#endif /* __XEOS_LIB_POSIX_CTYPE_H__ */
+#endif /* XEOS_LIB_POSIX_CTYPE_H */

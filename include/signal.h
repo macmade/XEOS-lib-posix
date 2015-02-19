@@ -61,8 +61,8 @@
 
 /* $Id$ */
 
-#ifndef __XEOS_LIB_POSIX_SIGNAL_H__
-#define __XEOS_LIB_POSIX_SIGNAL_H__
+#ifndef XEOS_LIB_POSIX_SIGNAL_H
+#define XEOS_LIB_POSIX_SIGNAL_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -216,4 +216,4 @@ void    ( * sigset( int sig, void ( * disp )( int ) ) )( int );
 }
 #endif
 
-#endif /* __XEOS_LIB_POSIX_SIGNAL_H__ */
+#endif /* XEOS_LIB_POSIX_SIGNAL_H */

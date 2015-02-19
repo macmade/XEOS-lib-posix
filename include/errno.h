@@ -61,8 +61,8 @@
 
 /* $Id$ */
 
-#ifndef __XEOS_LIB_POSIX_ERRNO_H__
-#define __XEOS_LIB_POSIX_ERRNO_H__
+#ifndef XEOS_LIB_POSIX_ERRNO_H
+#define XEOS_LIB_POSIX_ERRNO_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -157,4 +157,4 @@ extern "C" {
 }
 #endif
 
-#endif /* __XEOS_LIB_POSIX_ERRNO_H__ */
+#endif /* XEOS_LIB_POSIX_ERRNO_H */

@@ -61,8 +61,8 @@
 
 /* $Id$ */
 
-#ifndef __XEOS_LIB_POSIX_SCHED_H__
-#define __XEOS_LIB_POSIX_SCHED_H__
+#ifndef XEOS_LIB_POSIX_SCHED_H
+#define XEOS_LIB_POSIX_SCHED_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -89,4 +89,4 @@ int sched_yield( void );
 }
 #endif
 
-#endif /* __XEOS_LIB_POSIX_SCHED_H__ */
+#endif /* XEOS_LIB_POSIX_SCHED_H */

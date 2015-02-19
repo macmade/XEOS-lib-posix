@@ -61,8 +61,8 @@
 
 /* $Id$ */
 
-#ifndef __XEOS_LIB_POSIX_NETINET_IN_H__
-#define __XEOS_LIB_POSIX_NETINET_IN_H__
+#ifndef XEOS_LIB_POSIX_NETINET_IN_H
+#define XEOS_LIB_POSIX_NETINET_IN_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -137,4 +137,4 @@ extern const struct in6_addr in6addr_loopback;
 }
 #endif
 
-#endif /* __XEOS_LIB_POSIX_NETINET_IN_H__ */
+#endif /* XEOS_LIB_POSIX_NETINET_IN_H */

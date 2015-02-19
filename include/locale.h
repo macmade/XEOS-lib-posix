@@ -61,8 +61,8 @@
 
 /* $Id$ */
 
-#ifndef __XEOS_LIB_POSIX_LOCALE_H__
-#define __XEOS_LIB_POSIX_LOCALE_H__
+#ifndef XEOS_LIB_POSIX_LOCALE_H
+#define XEOS_LIB_POSIX_LOCALE_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -98,4 +98,4 @@ locale_t    uselocale( locale_t ocobj );
 }
 #endif
 
-#endif /* __XEOS_LIB_POSIX_LOCALE_H__ */
+#endif /* XEOS_LIB_POSIX_LOCALE_H */

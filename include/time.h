@@ -61,8 +61,8 @@
 
 /* $Id$ */
 
-#ifndef __XEOS_LIB_POSIX_TIME_H__
-#define __XEOS_LIB_POSIX_TIME_H__
+#ifndef XEOS_LIB_POSIX_TIME_H
+#define XEOS_LIB_POSIX_TIME_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -115,4 +115,4 @@ void        tzset( void );
 }
 #endif
 
-#endif /* __XEOS_LIB_POSIX_TIME_H__ */
+#endif /* XEOS_LIB_POSIX_TIME_H */

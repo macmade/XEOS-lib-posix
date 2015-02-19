@@ -61,8 +61,8 @@
 
 /* $Id$ */
 
-#ifndef __XEOS_LIB_POSIX_UNISTD_H__
-#define __XEOS_LIB_POSIX_UNISTD_H__
+#ifndef XEOS_LIB_POSIX_UNISTD_H
+#define XEOS_LIB_POSIX_UNISTD_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -497,4 +497,4 @@ ssize_t         write( int fd, const void * buf, size_t len );
 }
 #endif
 
-#endif /* __XEOS_LIB_POSIX_UNISTD_H__ */
+#endif /* XEOS_LIB_POSIX_UNISTD_H */
