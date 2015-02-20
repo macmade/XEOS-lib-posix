@@ -78,6 +78,11 @@ extern "C" {
 #include <system/types/useconds_t.h>
 #include <system/types/intptr_t.h>
 
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wreserved-id-macro"
+#endif
+
 #define	_POSIX_VERSION                          200809L
 #define	_POSIX2_VERSION                         200809L
 #define _POSIX_ASYNCHRONOUS_IO                  200809L
@@ -396,6 +401,10 @@ extern "C" {
 #define _SC_XOPEN_UNIX                          0
 #define _SC_XOPEN_UUCP                          0
 #define _SC_XOPEN_VERSION                       0
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
 
 #include <system/types/size_t.h>
 #include <system/types/ssize_t.h>
