@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <signal.h>
 
 void ( * sigset( int sig, void ( * disp )( int ) ) )( int )

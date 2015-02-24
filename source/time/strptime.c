@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <time.h>
 
 char * strptime( const char * restrict buf, const char * restrict format, struct tm * restrict tm )

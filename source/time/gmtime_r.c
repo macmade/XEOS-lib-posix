@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <time.h>
 
 struct tm * gmtime_r( const time_t * restrict timer, struct tm * restrict result )

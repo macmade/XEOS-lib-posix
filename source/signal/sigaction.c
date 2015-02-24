@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <signal.h>
 
 int sigaction( int sig, const struct sigaction * restrict act, struct sigaction * restrict oact )

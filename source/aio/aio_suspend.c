@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <aio.h>
 
 int aio_suspend( const struct aiocb * const list[], int nent, const struct timespec * timeout )

@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <aio.h>
 
 int aio_fsync( int op, struct aiocb * aiocbp )

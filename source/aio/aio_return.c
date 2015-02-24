@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <aio.h>
 
 ssize_t aio_return( struct aiocb * aiocbp )

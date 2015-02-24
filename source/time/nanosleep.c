@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <time.h>
 
 int nanosleep( const struct timespec * rqtp, struct timespec * rmtp )

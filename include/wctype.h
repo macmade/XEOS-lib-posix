@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #ifndef XEOS_LIB_POSIX_WCTYPE_H
 #define XEOS_LIB_POSIX_WCTYPE_H
 

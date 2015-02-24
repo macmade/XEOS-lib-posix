@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <sys/mman.h>
 
 int posix_madvise( void * addr, size_t len, int advice )

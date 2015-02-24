@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <arpa/inet.h>
 
 uint16_t htons( uint16_t hostshort )

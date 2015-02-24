@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <sched.h>
 
 int sched_rr_get_interval( pid_t pid, struct timespec * interval )

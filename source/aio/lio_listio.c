@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <aio.h>
 
 int lio_listio( int mode, struct aiocb * restrict const list[ restrict ], int nent, struct sigevent * restrict sig )

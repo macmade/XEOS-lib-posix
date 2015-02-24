@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <arpa/inet.h>
 
 in_addr_t inet_addr( const char * cp )

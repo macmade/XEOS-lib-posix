@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #ifndef XEOS_LIB_POSIX_ISO646_H
 #define XEOS_LIB_POSIX_ISO646_H
 

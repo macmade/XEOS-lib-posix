@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <arpa/inet.h>
 
 uint32_t htonl( uint32_t hostlong )

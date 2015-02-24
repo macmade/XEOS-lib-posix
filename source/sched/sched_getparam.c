@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <sched.h>
 
 int sched_getparam( pid_t pid, struct sched_param * param )
