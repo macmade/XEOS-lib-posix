@@ -59,6 +59,11 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
+/*!
+ * @author          Jean-David Gadina
+ * @copyright       (c) 2010-2015, Jean-David Gadina - www.xs-labs.com
+ */
+
 #include <aio.h>
 
 int lio_listio( int mode, struct aiocb * restrict const list[ restrict ], int nent, struct sigevent * restrict sig )

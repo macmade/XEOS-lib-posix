@@ -59,6 +59,11 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
+/*!
+ * @author          Jean-David Gadina
+ * @copyright       (c) 2010-2015, Jean-David Gadina - www.xs-labs.com
+ */
+
 #include <sys/mman.h>
 
 int posix_typed_mem_get_info( int fildes, struct posix_typed_mem_info * info )

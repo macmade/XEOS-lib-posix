@@ -59,6 +59,11 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
+/*!
+ * @author          Jean-David Gadina
+ * @copyright       (c) 2010-2015, Jean-David Gadina - www.xs-labs.com
+ */
+
 #include <unistd.h>
 
 int readlink( const char * restrict path, char * restrict buf, size_t len )

@@ -59,6 +59,11 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
+/*!
+ * @author          Jean-David Gadina
+ * @copyright       (c) 2010-2015, Jean-David Gadina - www.xs-labs.com
+ */
+
 #include <unistd.h>
 
 int linkat( int fd1, const char * path1, int fd2, const char * path2, int flag )

@@ -59,6 +59,11 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
+/*!
+ * @author          Jean-David Gadina
+ * @copyright       (c) 2010-2015, Jean-David Gadina - www.xs-labs.com
+ */
+
 #include <unistd.h>
 
 size_t confstr( int name, char * buf, size_t len )

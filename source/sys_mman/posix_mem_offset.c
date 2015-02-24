@@ -59,6 +59,11 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
+/*!
+ * @author          Jean-David Gadina
+ * @copyright       (c) 2010-2015, Jean-David Gadina - www.xs-labs.com
+ */
+
 #include <sys/mman.h>
 
 int posix_mem_offset( const void * restrict addr, size_t len, off_t * restrict off, size_t * restrict contig_len, int * restrict fildes )
